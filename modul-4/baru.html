@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+        }
+    </script>
+
+    <style>
+        .blue body {
+            background: #1e3a8a;
+            color: #ffffff;
+        }
+
+        .blue nav {
+            background: #1d4ed8;
+            border-bottom: 2px solid #60a5fa;
+        }
+
+        .blue section {
+            background: #1e40af;
+        }
+
+        .blue .bg-orange-200 {
+            background: #1e40af !important;
+        }
+
+        .blue .bg-orange-400 {
+            background: #3b82f6 !important;
+        }
+
+        .blue .text-orange-500 {
+            color: #93c5fd !important;
+        }
+
+        .blue .bg-white {
+            background: #2563eb !important;
+            color: white;
+        }
+
+        .blue .text-gray-600,
+        .blue .text-gray-700,
+        .blue .text-gray-500 {
+            color: #dbeafe !important;
+        }
+
+
+        .blue footer {
+            background: #1d4ed8;
+        }
+
+        .blue #contact {
+            background: #2563eb;
+        }
+
+
+        .blue .bg-orange-400 {
+            background: #3b82f6;
+        }
+
+        .blue .hover\:bg-orange-500:hover {
+            background: #2563eb;
+        }
+
+
+        .blue .blue\:text-blue-600 {
+            color: #93c5fd;
+        }
+
+        .blue .blue\:text-blue-700 {
+            color: #bfdbfe;
+        }
+
+        .blue .blue\:text-blue-800 {
+            color: #dbeafe;
+        }
+
+        .blue .blue\:text-blue-900 {
+            color: #eff6ff;
+        }
+
+        .blue .blue\:bg-blue-50 {
+            background: #1e3a8a;
+        }
+
+        .blue .blue\:bg-blue-100 {
+            background: #1e40af;
+        }
+
+        .blue .blue\:bg-blue-200 {
+            background: #1d4ed8;
+        }
+
+        .blue .blue\:bg-blue-300 {
+            background: #2563eb;
+        }
+
+        .blue .blue\:bg-blue-500 {
+            background: #3b82f6;
+        }
+
+        .blue .blue\:hover\:bg-blue-400:hover {
+            background: #60a5fa;
+        }
+
+        .blue .blue\:hover\:bg-blue-600:hover {
+            background: #1d4ed8;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100 text-gray-800 dark:bg-gray-900 dark:text-white transition duration-300">
+
+    <nav class="flex items-center justify-between px-8 py-4 bg-white dark:bg-gray-800 shadow 
+              blue:bg-blue-50 blue:border-b-2 blue:border-blue-200">
+
+
+        <div class="relative group flex items-center gap-2 cursor-pointer">
+      <img src="logo.png" alt="Logo BzMe" class="w-10 h-10 object-cover rounded-full">
+        <span class="font-bold text-lg text-purple-600 hover:text-purple-800 transition">BzMe</span>
+
+           
+
+            <div class="absolute top-12 left-0 bg-purple-600 text-white rounded-lg p-4 hidden group-hover:block w-40
+                  dark:bg-blue-600 blue:bg-blue-600">
+
+                <a href="#home" class="block px-2 py-1 hover:bg-orange-300 rounded 
+                               dark:hover:bg-blue-400 blue:hover:bg-blue-400">Home</a>
+                <a href="#about" class="block px-2 py-1 hover:bg-orange-300 rounded 
+                               dark:hover:bg-blue-400 blue:hover:bg-blue-400">About</a>
+                <a href="#services" class="block px-2 py-1 hover:bg-orange-300 rounded 
+                                  dark:hover:bg-blue-400 blue:hover:bg-blue-400">Services</a>
+                <a href="#contact" class="block px-2 py-1 hover:bg-orange-300 rounded 
+                                 dark:hover:bg-blue-400 blue:hover:bg-blue-400">Contact</a>
+                <a href="#blog" class="block px-2 py-1 hover:bg-orange-300 rounded 
+                              dark:hover:bg-blue-400 blue:hover:bg-blue-400">Blog</a>
+
+            </div>
+        </div>
+
+        <div class="hidden md:flex gap-6 font-medium">
+            <a href="#home" class="hover:text-orange-400 
+                            dark:hover:text-blue-400 blue:hover:text-blue-700">Home</a>
+            <a href="#about" class="hover:text-orange-400 
+                             dark:hover:text-blue-400 blue:hover:text-blue-700">About</a>
+            <a href="#services" class="hover:text-orange-400 
+                                dark:hover:text-blue-400 blue:hover:text-blue-700">Services</a>
+            <a href="#contact" class="hover:text-orange-400 
+                               dark:hover:text-blue-400 blue:hover:text-blue-700">Contact</a>
+            <a href="#blog" class="hover:text-orange-400 
+                            dark:hover:text-blue-400 blue:hover:text-blue-700">Blog</a>
+        </div>
+
+        <div class="flex items-center gap-4">
+
+            <div class="flex p-1 rounded-full gap-1">
+                <button onclick="setMode('light')" id="lightBtn" class="w-10 h-10 border-4 border-gray-500 rounded-full dark:border-white-500"
+                    title="Light">Light</button>
+            </div>
+            <div>
+                <button onclick="setMode('dark')" id="darkBtn" class="w-10 h-10 border-4 border-gray-500 rounded-full"
+                    title="Dark">dark</button>
+            </div>
+            <div>
+                <button onclick="setMode('blue')" id="blueBtn" class="w-10 h-10 border-4 border-gray-500 rounded-full"
+                    title="Blue">blue</button>
+            </div>
+
+            <button class="bg-orange-400 text-white px-4 py-2 rounded hover:bg-orange-500">
+                Sign Up
+            </button>
+
+        </div>
+
+    </nav>
+
+
+    <section id="home" class="flex flex-col md:flex-row items-center justify-between px-20 py-16">
+        <div class="max-w-xl">
+            <h1 class="text-4xl font-bold mb-4">
+                We Create <br><span class="text-purple-600">Solutions</span> For<br> Your Business
+            </h1>
+
+            <p class="text-gray-600 dark:text-gray-300 mb-6">
+                We provide intelligent technology solutions to<br> optimize efficiency and accelerate the growth of your
+                business
+                operations.
+            </p>
+
+            <button class="bg-orange-400 text-white px-6 py-3 rounded hover:bg-orange-500">
+                Get Started
+            </button>
+        </div>
+
+        <div class="mt-10 md:mt-0">
+            <img src="1.png" class="w-90 hover:scale-105 transition">
+        </div>
+    </section>
+
+
+    <section id="about" class="py-20 px-6 bg-gray-50 dark:bg-gray-800 text-center">
+
+
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">
+            We Provide The Best <span class="text-purple-600">Services</span>
+        </h2>
+        <p class="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto mb-12">
+            We deliver high-quality technology services specifically designed to enhance your business productivity and
+            scalability in a sustainable way.
+        </p>
+
+        <div class="grid md:grid-cols-4 gap-6">
+            <div class="bg-white dark:bg-gray-900 rounded-xl shadow p-6 hover:-translate-y-2 transition">
+                <div class="w-14 h-14 mx-auto mb-4 bg-yellow-400 rounded-full flex items-center justify-center">
+                    <img src="icon 1.png" class="w-6">
+                </div>
+                <h3 class="font-semibold text-lg mb-2">System</h3>
+                <p class="text-sm text-gray-500 mb-4">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                </p>
+                <button class="bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700">
+                    Click Here
+                </button>
+            </div>
+
+            <div class="bg-white dark:bg-gray-900 rounded-xl shadow p-6 hover:-translate-y-2 transition">
+                <div class="w-14 h-14 mx-auto mb-4 bg-yellow-400 rounded-full flex items-center justify-center">
+                    <img src="icon 1.png" class="w-6">
+                </div>
+                <h3 class="font-semibold text-lg mb-2">Digital Campaign</h3>
+                <p class="text-sm text-gray-500 mb-4">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                </p>
+                <button class="bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700">
+                    Click Here
+                </button>
+            </div>
+
+            <div class="bg-white dark:bg-gray-900 rounded-xl shadow p-6 hover:-translate-y-2 transition">
+
+                <div class="w-14 h-14 mx-auto mb-4 bg-yellow-400 rounded-full flex items-center justify-center">
+                    <img src="icon 2.png" class="w-6">
+                </div>
+
+                <h3 class="font-semibold text-lg mb-2">Marketing</h3>
+                <p class="text-sm text-gray-500 mb-4">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                </p>
+
+                <button class="bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700">
+                    Click Here
+                </button>
+            </div>
+
+            <div class="bg-white dark:bg-gray-900 rounded-xl shadow p-6 hover:-translate-y-2 transition">
+
+                <div class="w-14 h-14 mx-auto mb-4 bg-yellow-400 rounded-full flex items-center justify-center">
+                    <img src="icon 3.png" class="w-6">
+                </div>
+
+                <h3 class="font-semibold text-lg mb-2">Other</h3>
+                <p class="text-sm text-gray-500 mb-4">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                </p>
+
+                <button class="bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700">
+                    Click Here
+                </button>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="services">
+        <div class="bg-orange-200 dark:bg-gray-900 px-6">
+            <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between">
+
+                <div class="mb-10 md:mb-0">
+                    <img src="2.png" class="w-72">
+                </div>
+
+                <div class="max-w-lg">
+                    <h2 class="text-3xl font-bold mb-4">
+                        Simple <span class="text-purple-600">Solutions!</span>
+                    </h2>
+
+                    <p class="text-gray-700 mb-6">
+                        We understand that no two are alike. That’s why we take the time to truly understand your unique
+                        goals.
+                    </p>
+
+                    <div class="flex gap-4">
+                        <button class="bg-orange-400 text-white px-6 py-2 rounded hover:bg-orange-500">
+                            Get Started
+                        </button>
+                        <button class="border border-purple-500 text-purple-600 px-6 py-2 rounded hover:bg-purple-100">
+                            Read More
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+
+        <div class="py-16 px-6 bg-white dark:bg-gray-900">
+            <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between">
+
+                <div class="max-w-lg mb-10 md:mb-0">
+                    <h2 class="text-3xl font-bold mb-4">
+                        Our <span class="text-purple-600">Agency</span>
+                    </h2>
+                    <p class="text-gray-600 dark:text-gray-300 mb-6">
+                        We believe in the power of data. Our analytics-driven approach allows us to make informed
+                        decisions.
+                    </p>
+                    <button class="bg-orange-400 text-white px-6 py-2 rounded hover:bg-orange-500">
+                        Read More
+                    </button>
+                </div>
+                <div>
+                    <img src="3.png" class="w-72">
+                </div>
+            </div>
+        </div>
+
+
+
+        <section class="py-16 px-6 bg-gray-100 dark:bg-gray-800 text-center">
+
+            <h2 class="text-3xl font-bold mb-2">
+                What <span class="text-purple-600">Clients Say!</span>
+            </h2>
+
+            <p class="text-gray-500 mb-10">
+                See How Our Digital Marketing Agency Helped Clients Achieve Their Goals
+            </p>
+            <div class="grid md:grid-cols-3 gap-6">
+
+                <div class="bg-white dark:bg-gray-900 p-6 rounded-xl shadow">
+                    <h3 class="font-semibold text-orange-500">Johnny Suh</h3>
+                    <p class="text-sm text-gray-500 mb-2">Executive CEO</p>
+                    <p class="text-sm text-gray-600 mb-4">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    </p>
+                    <div class="flex justify-center gap-1">
+                        <img src="Star 2.png" class="w-4 h-4">
+                        <img src="Star 2.png" class="w-4 h-4">
+                        <img src="Star 2.png" class="w-4 h-4">
+                        <img src="Star 1.png" class="w-4 h-4">
+                        <img src="Star 1.png" class="w-4 h-4">
+                    </div>
+                </div>
+
+                <div class="bg-white dark:bg-gray-900 p-6 rounded-xl shadow">
+                    <h3 class="font-semibold text-orange-500">Nashley Juan</h3>
+                    <p class="text-sm text-gray-500 mb-2">Executive CEO</p>
+                    <p class="text-sm text-gray-600 mb-4">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    </p>
+                    <div class="flex justify-center gap-1">
+                        <img src="Star 2.png" class="w-4 h-4">
+                        <img src="Star 2.png" class="w-4 h-4">
+                        <img src="Star 2.png" class="w-4 h-4">
+                        <img src="Star 2.png" class="w-4 h-4">
+                        <img src="Star 1.png" class="w-4 h-4">
+                    </div>
+                </div>
+
+                <div class="bg-white dark:bg-gray-900 p-6 rounded-xl shadow">
+                    <h3 class="font-semibold text-orange-500">Mark Z.</h3>
+                    <p class="text-sm text-gray-500 mb-2">Executive CEO</p>
+                    <p class="text-sm text-gray-600 mb-4">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    </p>
+                    <div class="flex justify-center gap-1">
+                        <img src="Star 2.png" class="w-4 h-4">
+                        <img src="Star 2.png" class="w-4 h-4">
+                        <img src="Star 2.png" class="w-4 h-4">
+                        <img src="Star 2.png" class="w-4 h-4">
+                        <img src="Star 2.png" class="w-4 h-4">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+<section id="contact" class="theme-bg relative bg-[#f7f7f7] pt-[62px] scroll-mt-24 dark:bg-gray-900 dark:text-white transition duration-300">
+    <div class="relative z-10 mx-auto flex h-[53px] max-w-[642px] items-center justify-between rounded-[8px] bg-[#ff8a2a] px-[37px] text-white">
+      <h2 class="text-[16px] font-extrabold">Ready To Get Started?</h2>
+      <a href="mailto:contact@bzme.com" class="flex h-[25px] w-[123px] items-center justify-center rounded-[7px] border-[2px] border-white text-[15px] font-medium leading-none">
+        Contact Us
+      </a>
+    </div>
+
+    <footer class="-mt-[27px] bg-[#f9d477] pb-[60px] pt-[102px] dark:bg-gray-900 dark:text-white transition duration-300">
+      <div class="mx-auto flex max-w-[500px] items-start justify-between">
+        <a href="#home" class="flex items-center gap-[10px] pt-[18px]">
+          <img src="logo.png" alt="BzMe Logo" class="h-[42px] w-[42px] object-contain" />
+          <span class="text-[22px] font-extrabold text-[#8a35ff]">BzMe</span>
+        </a>
+
+        <div>
+          <h4 class="text-[13px] font-extrabold text-[#222] dark:text-white transition duration-300">Company</h4>
+          <ul class="mt-[7px] space-y-[3px] text-[11px] leading-[14px] text-[#222] dark:text-white transition duration-300">
+            <li><a href="#about" class="hover:underline">About</a></li>
+            <li><a href="#contact" class="hover:underline">Contact</a></li>
+            <li><a href="#" class="hover:underline">Careers</a></li>
+            <li><a href="#" class="hover:underline">Team</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-[13px] font-extrabold text-[#222] dark:text-white transition duration-300">Designs</h4>
+          <ul class="mt-[7px] space-y-[3px] text-[11px] leading-[14px] text-[#222] dark:text-white transition duration-300">
+            <li><a href="#services" class="hover:underline">Find a Designer</a></li>
+            <li><a href="#blog" class="hover:underline">Discover Inspiration</a></li>
+            <li><a href="#contact" class="hover:underline">Pricing</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-[13px] font-extrabold text-[#222] dark:text-white transition duration-300">Support</h4>
+          <ul class="mt-[7px] space-y-[3px] text-[11px] leading-[14px] text-[#222] dark:text-white transition duration-300">
+            <li><a href="#" class="hover:underline">Privacy Policy</a></li>
+            <li><a href="#" class="hover:underline">Terms</a></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+  </section>
+        <script>
+            function setMode(mode) {
+                const html = document.documentElement;
+
+                html.classList.remove('dark', 'blue');
+
+                if (mode === 'dark') {
+                    html.classList.add('dark');
+                } else if (mode === 'blue') {
+                    html.classList.add('blue');
+                }
+
+                localStorage.setItem('themeMode', mode);
+            }
+        </script>
+</body>
+
+</html>
